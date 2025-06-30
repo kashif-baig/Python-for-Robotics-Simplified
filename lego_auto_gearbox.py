@@ -1,4 +1,4 @@
-# Arduino Multi-function shield basic example using Robo-Tx framework
+# Automated gearbox using LEGO, Arduino and Robo-Tx
 # (C) Kashif Baig
 #
 # Deploy Robo-Tx firmware to Arduino (see link below). Make sure
