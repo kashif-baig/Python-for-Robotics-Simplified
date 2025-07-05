@@ -62,7 +62,7 @@ try:
     while detectEnter.is_alive():
 
         # Get an infra-red command, if received.
-        ir_command = mfs.GetIRCommand()
+        ir_command = mfs.Digital.GetIRCommand()
 
         if ir_command.Received:
             ir_state = "pressed" if ir_command.ButtonPressed else "released"

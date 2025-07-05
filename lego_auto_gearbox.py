@@ -106,7 +106,7 @@ try:
 
     while detectEnter.is_alive():
         # Get an infra-red command, if received.
-        ir_cmd = autoGearBox.GetIRCommand()
+        ir_cmd = autoGearBox.Digital.GetIRCommand()
 
         if ir_cmd.Received:
             ir_state = "pressed" if ir_cmd.ButtonPressed else "released"
