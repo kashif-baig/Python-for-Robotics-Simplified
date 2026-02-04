@@ -49,9 +49,9 @@ try:
 
     # -----------------------------------------------------------------------------------------
     # Assign sensor variables
-    light_sensor = home.Analog.A0
+    light_sensor = home.Analog.A2
     rain_sensor = home.Analog.A1
-    temperature_sensor = home.Analog.A2
+    temperature_sensor = home.Analog.A0
 
     # Assign digital input variables
     button = home.Digital.IN0
