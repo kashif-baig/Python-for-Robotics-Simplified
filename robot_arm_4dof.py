@@ -33,9 +33,7 @@ serial_baud_rate = 115200
 
 robotArm = RobotIO(serial_port, serial_baud_rate, dtr_enable)
 try:
-    print("Connecting ...")
     robotArm.Connect()
-    print("OK.")
 
     # Thread to detect Enter key
     detectEnter = threading.Thread(target = input)
@@ -109,4 +107,4 @@ try:
 finally:
     # Close connection to Arduino
     robotArm.Close()
-    print("Disconnecting.")
+

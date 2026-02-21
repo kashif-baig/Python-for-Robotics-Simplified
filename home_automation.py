@@ -38,9 +38,7 @@ serial_baud_rate = 115200
 
 home = RobotIO(serial_port, serial_baud_rate, dtr_enable)
 try:
-    print("Connecting ...")
     home.Connect()
-    print("OK.")
     print("Press Enter to stop program.")
 
     # Thread to detect Enter key
@@ -127,4 +125,4 @@ try:
         time.sleep(0.05)
 finally:
     home.Close()
-    print("Disconnecting.")
+

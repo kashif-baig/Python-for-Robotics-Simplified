@@ -55,14 +55,12 @@ blinker = None
 
 # If connecting directly to an Arduino using USB, you can find the serial port using the Arduino IDE.
 dtr_enable = False
-serial_port = "COM3"
+serial_port = "COM13"
 serial_baud_rate = 115200
 
 mfs = RobotIO(serial_port, serial_baud_rate, dtr_enable)
 try:
-    print("Connecting ...")
     mfs.Connect()
-    print("OK.")
     print("Press button 1 on shield to start/stop LED blinking.")
     print("Press Enter to stop program.")
 
@@ -96,4 +94,4 @@ finally:
 
     # Close connection to Arduino
     mfs.Close()
-    print("Disconnecting.")
+

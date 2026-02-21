@@ -32,15 +32,11 @@ def to_time_format(seconds):
     return f"{seconds // 60:02}.{str(seconds % 60).zfill(2)}"
 
 # If connecting directly to an Arduino using USB, you can find the serial port using the Arduino IDE.
-dtr_enable = False
-serial_port = "COM3"
-serial_baud_rate = 115200
+serial_port = "COM13"
 
-mfs = RobotIO(serial_port, serial_baud_rate, dtr_enable)
+mfs = RobotIO(serial_port)
 try:
-    print("Connecting ...")
     mfs.Connect()
-    print("OK.")
     print("Press Enter to stop program.")
 
     # Thread to detect Enter key
@@ -108,4 +104,4 @@ try:
         time.sleep(0.025)
 finally:
     mfs.Close()
-    print("Disconnecting.")
+    

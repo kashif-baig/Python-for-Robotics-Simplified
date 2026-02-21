@@ -51,9 +51,7 @@ servo_v_angle = (servo_v_limit_low + servo_v_limit_high) / 2
 
 solarTracker = RobotIO(serial_port, serial_baud_rate, dtr_enable)
 try:
-    print("Connecting ...")
     solarTracker.Connect()
-    print("OK.")
     print("Press Enter to stop program.")
 
     # Enable analog inputs for light sensors.
@@ -121,4 +119,4 @@ try:
 finally:
     # Close connection to Arduino.
     solarTracker.Close()
-    print("Disconnecting.")
+

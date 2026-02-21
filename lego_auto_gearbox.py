@@ -1,4 +1,4 @@
-# Automated gearbox using LEGO, Arduino and Robo-Tx
+# Automated gearbox using LEGO, Arduino and Robo-Tx Education Edition API
 # (C) Kashif Baig
 #
 # Deploy Robo-Tx firmware to Arduino (see link below). Make sure
@@ -36,14 +36,12 @@ cmd_speed_up = 9
 
 # If connecting directly to an Arduino using USB, you can find the serial port using the Arduino IDE.
 dtr_enable = True
-serial_port = "COM8"
+serial_port = "COM13"
 serial_baud_rate = 115200
 
 autoGearBox = RobotIO(serial_port, serial_baud_rate, dtr_enable)
 try:
-    print("Connecting ...")
     autoGearBox.Connect()
-    print("OK.")
     print("Press Enter to stop the program.")
 
     # Thread to detect Enter key
@@ -118,7 +116,6 @@ try:
                 if ir_cmd.ButtonPressed:
                     # Slow down button was pressed
                     # Start slowing down motor
-                    # motor.Drive(0)
                     if not is_in_first_gear and rpm > 0:
                         motor.Drive(up_shift_start_speed - 2)
                     elif rpm > 0:
@@ -137,7 +134,7 @@ try:
                         # Shift in to 1st gear if starting from stationary
                         motor.SetAcceleration(motor_acceleration)
                         gear_lever.SetPosition(first_gear_position)
-                        # time.sleep(servo_wait_time + gear_change_latency)
+
                         is_in_first_gear = True
                         last_gear_shift_time = dt.datetime.now()
                     # Start speeding up the motor
@@ -224,4 +221,4 @@ try:
         time.sleep(0.01)
 finally:
     autoGearBox.Close()
-    print("Disconnecting.")
+

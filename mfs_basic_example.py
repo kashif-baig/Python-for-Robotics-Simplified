@@ -24,14 +24,12 @@ from RoboTx import *
 # If connecting directly to an Arduino using USB, you can find
 # the serial port using the Arduino IDE.
 dtr_enable = False
-serial_port = "COM3"
+serial_port = "COM13"
 serial_baud_rate = 115200
 
 mfs = RobotIO(serial_port, serial_baud_rate, dtr_enable)
 try:
-    print("Connecting ...")
     mfs.Connect()
-    print("OK.")
     print("Hold button 3 on board to stop program.")
 
     # Analog inputs have already been enabled in the firmware profile, so no need to do here.
@@ -67,4 +65,4 @@ try:
         time.sleep(0.025)
 finally:
     mfs.Close()
-    print("Disconnecting.")
+
